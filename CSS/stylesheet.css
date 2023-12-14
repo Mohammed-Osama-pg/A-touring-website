@@ -5,6 +5,7 @@
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  user-select: none;
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -379,12 +380,25 @@ header .menu:hover span:first-child {
 }
 .hero-box .slider .img-holder {
   width: 24vw;
+  height: 50vh;
   opacity: 0;
+  max-width: 24vw;
+  overflow: hidden;
   animation: showup 3s ease-in-out 1 forwards 1s;
+  position: relative;
 }
 .hero-box .slider .img-holder img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  opacity: 0;
   object-fit: cover;
+  transition: 0.5s;
+}
+.hero-box .slider .img-holder img.active {
+  opacity: 1;
 }
 .hero-box .slider .controls {
   display: flex;
@@ -405,7 +419,7 @@ header .menu:hover span:first-child {
   height: 16px;
   border: 1px solid #fff;
   border-radius: 50%;
-  transition: 0.5s;
+  transition: 1s;
   cursor: pointer;
 }
 .hero-box .slider .controls .bolts .bolt:hover {
@@ -503,8 +517,9 @@ header .menu:hover span:first-child {
     min-width: 250px;
   }
   .hero-box .slider .island .img-holder {
-    width: auto;
-    height: 100%;
+    width: 40vw;
+    height: 50vh;
+    max-width: none;
   }
   .hero-box .media {
     bottom: unset;
