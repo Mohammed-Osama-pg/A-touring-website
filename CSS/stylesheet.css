@@ -30,13 +30,26 @@ a {
   height: 100vh;
   overflow: hidden;
   position: relative;
-  background-image: url(../img/Hero-background.png);
-  background-position: center;
-  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  overflow: hidden;
+}
+.hero-section .bacground-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  transform: scale(3);
+  animation: zoom-out 3s ease-in-out 1 forwards;
+}
+.hero-section .bacground-img img {
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
 }
 .hero-section::after {
   content: "";
@@ -194,6 +207,11 @@ header .menu:hover span:first-child {
   }
   header nav .input-holder {
     right: 8vw;
+  }
+}
+@media (max-width: 991px) {
+  .hero-section .bacground-img img {
+    height: 100%;
   }
 }
 @media (max-width: 767px) {
@@ -475,12 +493,18 @@ header .menu:hover span:first-child {
   }
   .hero-box .media {
     position: fixed;
-    top: 0;
-    right: 0;
+    right: -10%;
     opacity: 0;
-    /* right: -10%; */
+    /* top: 0; */
     /* opacity: 100; */
   }
 }
 /* End Hero box */
 /* End Hero Sction */
+/* Start Animation */
+@keyframes zoom-out {
+  100% {
+    transform: scale(1);
+  }
+}
+/* End Animation */
