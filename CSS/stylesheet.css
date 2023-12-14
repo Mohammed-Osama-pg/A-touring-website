@@ -538,8 +538,8 @@ header .menu:hover span:first-child {
   }
 }
 @media (max-width: 767px) {
-  .hero-section {
-    height: 100vh;
+  .hero-box .content {
+    margin-top: 10vh;
   }
   .hero-box .content .title h1:first-child {
     font-size: 4rem;
@@ -557,7 +557,21 @@ header .menu:hover span:first-child {
     margin: auto;
     width: fit-content;
   }
-  .hero-box .slider {
+  .hero-box .slider .island {
+    flex-direction: column-reverse;
+  }
+  .hero-box .slider .island .img-holder,
+  .hero-box .slider .island .island-content {
+    width: 80vw;
+    border: 1px #fff solid;
+  }
+  .hero-box .slider .arrows {
+    margin-top: 25px;
+    width: 70vw;
+    justify-content: center;
+    gap: 10vw;
+  }
+  .hero-box .slider .controls .bolts {
     display: none;
   }
   .hero-box .media {
