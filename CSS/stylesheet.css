@@ -270,6 +270,12 @@ header .menu:hover span:first-child {
   color: #fff;
   border: 2px solid;
   border-radius: 17px;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+.hero-box .content a.btn:hover {
+  opacity: 1;
+  border-top-left-radius: 0;
 }
 .hero-box .slider {
   display: flex;
@@ -335,6 +341,11 @@ header .menu:hover span:first-child {
   height: 16px;
   border: 1px solid #fff;
   border-radius: 50%;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.hero-box .slider .controls .bolts .bolt:hover {
+  transform: translateY(-10px) scale(1.5);
 }
 .hero-box .slider .controls .bolts .bolt.active {
   background-color: #fff;
@@ -388,6 +399,9 @@ header .menu:hover span:first-child {
   width: 2px;
   height: calc(100% + 15px);
   background-color: #fff;
+}
+.hero-box .media img {
+  cursor: pointer;
 }
 @media (max-width: 1199px) {
   .hero-box .content .title h1:first-child {
