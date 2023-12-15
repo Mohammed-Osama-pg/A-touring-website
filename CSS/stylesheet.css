@@ -403,7 +403,7 @@ header .menu:hover span:first-child {
 }
 .hero-box .slider .img-holder {
   width: 24vw;
-  height: 50vh;
+  min-height: 50vh;
   opacity: 0;
   max-width: 24vw;
   overflow: hidden;
