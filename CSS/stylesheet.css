@@ -70,7 +70,7 @@ header {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  z-index: 1;
+  z-index: 100;
 }
 header.container {
   height: 92px;
@@ -130,6 +130,7 @@ header nav ul {
   opacity: 0;
   transform: scale(0) translate(-40px, 40px);
   animation: reset 3s ease-in-out forwards;
+  transition: 0.5s;
 }
 header nav ul li {
   animation: reset 2s ease-in-out forwards;
@@ -219,19 +220,28 @@ header .menu:hover span:first-child {
 @media (max-width: 1199px) {
   header nav {
     justify-content: flex-end;
+    z-index: 100;
+    width: 80vw;
+    height: 100%;
+    position: relative;
   }
   header nav ul {
     position: absolute;
-    width: 75%;
+    width: 90%;
+    max-width: none;
     height: 100%;
     top: 110%;
-    left: 50%;
+    left: 42%;
     transform: translate(-50%, -50%);
     opacity: 0;
     z-index: 10;
-    /* transform: translate(-50%, 0); */
-    /* opacity: 100; */
     animation: none;
+    font-size: 16px;
+    transition: 1s;
+  }
+  header nav ul.active {
+    transform: translate(-50%, 0);
+    opacity: 100;
   }
   header nav .input-holder {
     right: 8vw;
@@ -240,6 +250,12 @@ header .menu:hover span:first-child {
 @media (max-width: 991px) {
   .hero-section .bacground-img img {
     height: 100%;
+  }
+  header nav ul {
+    padding: 16px 24px;
+  }
+  header nav ul a {
+    font-size: 18px;
   }
 }
 @media (max-width: 767px) {
@@ -251,29 +267,36 @@ header .menu:hover span:first-child {
     width: 80%;
     height: 100%;
     top: 0;
-    right: 0;
-    left: unset;
+    left: 0;
     border-radius: 0;
-    transform: translate(100%, 0);
+    transform: translate(200%, 0);
     flex-direction: column;
     justify-content: center;
     gap: 50px;
-    /* transform: translate(0, 0); */
-    /* opacity: 100; */
+    background-image: linear-gradient(0deg, #001d57df, #38d2c2df, #6fcfffdf);
+  }
+  header nav ul.active {
+    transform: translate(0, 0);
+    opacity: 100;
   }
   header nav .input-holder {
-    position: fixed;
-    top: 0;
-    right: 0;
     position: fixed;
     top: 18%;
     right: -10%;
     opacity: 0;
-    /* right: 10%; */
-    /* opacity: 100; */
+    transition: 0.5s;
+    z-index: 1000;
+  }
+  header nav .input-holder.active {
+    right: 25%;
+    opacity: 100;
+  }
+  header nav .input-holder:hover #search-input,
+  #search-input:focus {
+    width: 50vw;
   }
 }
-/* End Header */
+/* End  Header */
 /* Start Hero box */
 .hero-box {
   flex: 1;
@@ -512,6 +535,9 @@ header .menu:hover span:first-child {
     /* margin: 50px; */
     padding-bottom: 20px;
   }
+  .hero-box .content {
+    margin-top: 10vh;
+  }
   .hero-box .slider .island .island-content {
     width: 28vw;
     min-width: 250px;
@@ -538,9 +564,6 @@ header .menu:hover span:first-child {
   }
 }
 @media (max-width: 767px) {
-  .hero-box .content {
-    margin-top: 10vh;
-  }
   .hero-box .content .title h1:first-child {
     font-size: 4rem;
   }
@@ -578,8 +601,12 @@ header .menu:hover span:first-child {
     position: fixed;
     right: -10%;
     opacity: 0;
-    /* top: 0; */
-    /* opacity: 100; */
+    transition: 0.5s;
+  }
+  .hero-box .media.active {
+    right: 0;
+    top: 96px;
+    opacity: 100;
   }
 }
 /* End Hero box */

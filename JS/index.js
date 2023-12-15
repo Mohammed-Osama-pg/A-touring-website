@@ -5,6 +5,13 @@ let slideimges = Array.from(
 let nextBtn = document.querySelector("#right-arrow");
 let previousBtn = document.querySelector("#left-arrow");
 let boltsHolder = document.querySelector(".bolts");
+let menuBtn = document.querySelector(".menu");
+let navUl = document.querySelector("header nav ul");
+let media = document.querySelector(".media");
+let searchInput = document.querySelector("header nav .input-holder");
+// Create menu function
+menuBtn.onclick = menuTagole;
+
 // create numbers data
 let conte = 1;
 let length = slideimges.length;
@@ -73,4 +80,15 @@ function prev() {
     conte--;
   }
   check();
+}
+function menuTagole() {
+  if (navUl.className === "active") {
+    navUl.className = "";
+    media.className = "media";
+    searchInput.className = "input-holder";
+  } else {
+    navUl.className = "active";
+    media.className = "media active";
+    searchInput.className = "input-holder active";
+  }
 }
