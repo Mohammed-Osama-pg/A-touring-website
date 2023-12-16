@@ -9,6 +9,18 @@ let menuBtn = document.querySelector(".menu");
 let navUl = document.querySelector("header nav ul");
 let media = document.querySelector(".media");
 let searchInput = document.querySelector("header nav .input-holder");
+
+// call all animation element
+let allAnimation = document.querySelectorAll(".animation");
+let preLoade = document.querySelector(".pre-loade");
+// Create pre-load fuction
+window.addEventListener("load", () => {
+  preLoade.classList.add("fade-out");
+  allAnimation.forEach(function (ele) {
+    ele.style.animationPlayState = "running";
+  });
+});
+
 // Create menu function
 menuBtn.onclick = menuTagole;
 
