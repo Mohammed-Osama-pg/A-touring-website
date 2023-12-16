@@ -297,9 +297,11 @@ header .menu:hover span:first-child {
     transform: translate(-50%, -50%);
     opacity: 0;
     z-index: 10;
-    animation: none;
     font-size: 16px;
     transition: 1s;
+  }
+  header nav ul.animation {
+    animation: none;
   }
   header nav ul.active {
     transform: translate(-50%, 0);
