@@ -273,10 +273,12 @@ header .menu span {
   border-radius: 2.5px;
   transition: width 0.4s;
 }
-header .menu:hover span:nth-child(2) {
+header .menu:hover span:nth-child(2),
+header .menu.active span:nth-child(2) {
   width: 60%;
 }
-header .menu:hover span:first-child {
+header .menu:hover span:first-child,
+header .menu.active span:first-child {
   width: 20%;
 }
 @media (max-width: 1199px) {
